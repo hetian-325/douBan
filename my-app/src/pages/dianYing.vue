@@ -1,7 +1,7 @@
 <template>
     <div>
         <link-nav></link-nav>
-        电影
+        <p id="text"></p>
     </div>
 </template>
 
@@ -10,8 +10,14 @@ import linkNav from '../components/linkNav'
 export default {
     components:{
         linkNav
+    },
+    created() {
+        $(function(){
+            $('#text').html('这是电影')
+        })
     }
 }
+
 </script>
 
 <style scoped>

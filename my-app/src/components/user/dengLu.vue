@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>
-            <router-link to="/douban" class="aa">取消</router-link>
+            <span class="aa" @click="quxiao()">取消</span>
             登录豆瓣
         </h1>
         <div class="iptBox">
@@ -64,6 +64,9 @@ export default {
                     }
                 }
             )
+        },
+        quxiao(){
+            this.$router.go(-1);
         }
     }
 }
@@ -78,6 +81,8 @@ export default {
         color:#42bd56;
     }
     .aa{
+        font-size:0.16rem;
+        color:#42bd56;
         font-weight: normal;
         position:absolute;
         left:0.18rem;

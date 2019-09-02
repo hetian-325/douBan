@@ -17,7 +17,7 @@ export default {
     .btnBox{
         width:3.4rem;
         height:1.06rem;
-        margin:0.1rem auto 0;
+        margin:0.59rem auto 0;
         display:flex;
         flex-wrap: wrap;
         justify-content: space-between;

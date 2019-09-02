@@ -24,12 +24,16 @@ export default {
         font-size:0px;
     }
     .navBox{
+        width:100%;
         height:0.49rem;
         display:flex;
         justify-content: space-between;
         align-items: center;
         border-bottom: .01rem solid #f3f3f3;
         padding:0 0.18rem;
+        position:fixed;
+        top:0px;
+        background-color: #fff;
     }
     .leftNav a{
         font-size:0.24rem;
