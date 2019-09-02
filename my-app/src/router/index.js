@@ -11,10 +11,15 @@ import souSuo from '../pages/souSuo'
 import zhuCe from '../components/user/zhuCe'
 import dengLu from '../components/user/dengLu'
 
+import lunBo from '../components/movie/lunBo'
+import xQing from '../components/movie/xQing'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {path:'/lunbo',name:'lunBo',component:lunBo},
+    {path:'/xqing/:id',name:'xQing',component:xQing},
     {path:'/zhuce',name:'zhuCe',component:zhuCe},
     {path:'/denglu',name:'dengLu',component:dengLu},
     {path:'/douban',name:'douBan',component:douBan},

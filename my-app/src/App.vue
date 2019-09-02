@@ -31,4 +31,7 @@ a{
 img{
 	border:none;
 }
+.clear{
+	margin-top:0.49rem;
+}
 </style>
