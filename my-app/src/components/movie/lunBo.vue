@@ -1,19 +1,32 @@
 <template>
     <div>
+        <div class="top">
+            <span>{{tl}}</span>
+            <a href="#">更多</a>
+        </div>
         <div class="lbBox">
             <div class="con" v-for="(v,i) in ziarr" :key="i">
                 <router-link :to="{name:'xQing',params:{id:v.id}}">
                     <img :src="v.images.small">
                     <p>{{v.title}}</p>
                 </router-link>
+                <star :num="v.rating.average"></star><span class="btm">{{v.rating.average}}</span>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import star from '../star'
 export default {
+    components:{
+        star
+    },
     props:{
+        tl:{
+            type:String,
+            required:true
+        },
         ziarr:{
             type:Array,
             required:true
@@ -23,6 +36,22 @@ export default {
 </script>
 
 <style scoped>
+    .top{
+        width:100%;
+        height: 0.5rem;
+        padding:0 0.16rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .top span{
+        font-size:0.16rem;
+        color:#111;
+    }
+    .top a{
+        font-size:0.14rem;
+        color:#42bd56;
+    }
     .lbBox{
         width:100%;
         display:flex;
@@ -38,6 +67,13 @@ export default {
     .con p{
         font-size:0.16rem;
         text-align:center;
-        line-height:0.3rem;
+        margin-bottom:0.05rem;
+        width:1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .btm{
+        margin-left:0.1rem;
     }
 </style>

@@ -1,15 +1,30 @@
 <template>
-    <div>
+    <div class="clear">
         <link-nav></link-nav>
-        图书
+        <!-- <lun-bo></lun-bo> -->
     </div>
 </template>
 
 <script>
 import linkNav from '../components/linkNav'
+// import lunBo from '../components/movie/lunBo'
 export default {
     components:{
-        linkNav
+        linkNav,
+        // lunBo
+    },
+    data() {
+        return {
+            arr:[]
+        }
+    },
+    created() {
+        this.axios({
+            method:"get",
+            url:"/tuShu"
+        }).then((ok)=>{
+            console.log(ok)
+        })
     }
 }
 </script>

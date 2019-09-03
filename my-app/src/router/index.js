@@ -14,10 +14,15 @@ import dengLu from '../components/user/dengLu'
 import lunBo from '../components/movie/lunBo'
 import xQing from '../components/movie/xQing'
 
+import douCon from '../components/douCon'
+import syxQ from '../components/syxQ'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {path:'/doucon',name:'douCon',component:douCon},
+    {path:'/syxq/:id',name:'syxQ',component:syxQ},
     {path:'/lunbo',name:'lunBo',component:lunBo},
     {path:'/xqing/:id',name:'xQing',component:xQing},
     {path:'/zhuce',name:'zhuCe',component:zhuCe},

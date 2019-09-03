@@ -119,7 +119,7 @@ export default {
         width:0.25rem;
         height:0.25rem;
         position:absolute;
-        top:1.22rem;
+        top:1.18rem;
         right:0.3rem;
     }
     button{

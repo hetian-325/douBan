@@ -1,26 +1,10 @@
 <template>
     <div class="clear">
         <link-nav></link-nav>
-        <div class="top">
-            <span>影院热映</span>
-            <a href="#">更多</a>
-        </div>
-        <lun-bo :ziarr="arra"></lun-bo>
-        <div class="top">
-            <span>免费在线观影</span>
-            <a href="#">更多</a>
-        </div>
-        <lun-bo :ziarr="arrb"></lun-bo>
-        <div class="top">
-            <span>新片速递</span>
-            <a href="#">更多</a>
-        </div>
-        <lun-bo :ziarr="arrc"></lun-bo>
-        <div class="top">
-            <span>发现好电影</span>
-            <a href="#">更多</a>
-        </div>
-        <geng-duo></geng-duo>
+        <lun-bo :ziarr="arra" tl="影院热映"></lun-bo>
+        <lun-bo :ziarr="arrb" tl="免费在线观影"></lun-bo>
+        <lun-bo :ziarr="arrc" tl="新片速递"></lun-bo>
+        <geng-duo tl="发现好电影"></geng-duo>
         <fen-lei></fen-lei>
         <my-footer></my-footer>
     </div>
@@ -70,20 +54,5 @@ export default {
 </script>
 
 <style scoped>
-    .top{
-        width:100%;
-        height: 0.5rem;
-        padding:0 0.16rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .top span{
-        font-size:0.16rem;
-        color:#111;
-    }
-    .top a{
-        font-size:0.14rem;
-        color:#42bd56;
-    }
+
 </style>
