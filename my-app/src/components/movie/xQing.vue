@@ -1,12 +1,16 @@
 <template>
-    <div>
-        这是详情
-        {{xqarr}}
+    <div class="clear">
+        <link-nav></link-nav>
+        <p>{{xqarr}}</p>
     </div>
 </template>
 
 <script>
+import linkNav from '../linkNav'
 export default {
+    components:{
+        linkNav
+    },
     data() {
         return {
             xqarr:[]

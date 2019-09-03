@@ -41,6 +41,7 @@ export default {
     }
     ul{
         border-top: 1px solid #eee;
+        overflow: hidden;
     }
     li{
         float:left;

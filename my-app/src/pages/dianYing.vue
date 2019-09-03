@@ -22,6 +22,7 @@
         </div>
         <geng-duo></geng-duo>
         <fen-lei></fen-lei>
+        <my-footer></my-footer>
     </div>
 </template>
 
@@ -30,6 +31,7 @@ import linkNav from '../components/linkNav'
 import lunBo from '../components/movie/lunBo'
 import gengDuo from '../components/movie/gengDuo'
 import fenLei from '../components/movie/fenLei'
+import myFooter from '../components/movie/myFooter'
 export default {
     data(){
         return {
@@ -40,7 +42,8 @@ export default {
         linkNav,
         lunBo,
         gengDuo,
-        fenLei
+        fenLei,
+        myFooter
     },
     created() {
         this.axios({
