@@ -30,6 +30,7 @@ export default {
     ul{
         overflow-x:auto;
         white-space: nowrap;
+        
     }
     li{
         display: inline-block;

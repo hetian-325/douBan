@@ -21,6 +21,7 @@
             <a href="#">更多</a>
         </div>
         <geng-duo></geng-duo>
+        <fen-lei></fen-lei>
     </div>
 </template>
 
@@ -28,6 +29,7 @@
 import linkNav from '../components/linkNav'
 import lunBo from '../components/movie/lunBo'
 import gengDuo from '../components/movie/gengDuo'
+import fenLei from '../components/movie/fenLei'
 export default {
     data(){
         return {
@@ -37,7 +39,8 @@ export default {
     components:{
         linkNav,
         lunBo,
-        gengDuo
+        gengDuo,
+        fenLei
     },
     created() {
         this.axios({
