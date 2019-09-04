@@ -38,20 +38,24 @@
                     <li>{{v.time_str}}</li>
                 </ul>
             </div>
-            <ul>
-                <li><a href="#"></a></li>
-            </ul>
+            <div class="content">
+                <h3>活动详情</h3>
+                <p>{{v.content}}</p>
+            </div>
         </div>
+        <my-footer></my-footer>
     </div>
 </template>
 
 <script>
 import linkNav from './linkNav'
 import xiaZai from './xiaZai'
+import myFooter from './movie/myFooter'
 export default {
     components:{
         linkNav,
-        xiaZai
+        xiaZai,
+        myFooter
     },
     data() {
         return {
@@ -69,15 +73,7 @@ export default {
                 }
             })
         })
-    },
-    // computed: {
-    //     strArr(){
-    //         this.syarr.forEach(v=>{
-    //             let str = v.tags.split(",")
-    //             return str
-    //         })
-    //     }
-    // }
+    }
 }
 </script>
 
@@ -117,5 +113,14 @@ export default {
     .time span{
         color:#666;
         flex-shrink: 0;
+    }
+    .content h3{
+        color: #072;
+        font-size:0.16rem;
+        font-weight: bolder;
+        margin:0.2rem 0;
+    }
+    .content p{
+        overflow: hidden;
     }
 </style>
