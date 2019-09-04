@@ -1,15 +1,20 @@
 <template>
     <div class="clear">
         <link-nav></link-nav>
-        <p>{{xqarr}}</p>
+        <xia-zai text="聊聊你的观影感受"></xia-zai>
+        <xq-con :conarr="xqarr"></xq-con>
     </div>
 </template>
 
 <script>
 import linkNav from '../linkNav'
+import xiaZai from '../xiaZai'
+import xqCon from './xqCon'
 export default {
     components:{
-        linkNav
+        linkNav,
+        xiaZai,
+        xqCon
     },
     data() {
         return {
@@ -27,6 +32,7 @@ export default {
                     return v
                 }
             })
+            console.log(this.xqarr)
         })
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="clear">
         <link-nav></link-nav>
-        <xia-zai></xia-zai>
+        <xia-zai text="打开APP，浏览更多"></xia-zai>
         <user-bar></user-bar>
         <liu-ye></liu-ye>
         <liu-ye></liu-ye>

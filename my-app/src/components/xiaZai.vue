@@ -2,7 +2,7 @@
     <div>
         <div class="imgs"><img src="../../static/img/bg.jpg" width="100%"></div>
         <div class="text">
-            <span>每天看点好内容</span>
+            <span>{{text}}</span>
             <div class="con">
                 <span>极速下载</span>
                 <span>打开</span>
@@ -13,7 +13,12 @@
 
 <script>
 export default {
-    
+    props:{
+        text:{
+            type:String,
+            required:true
+        }
+    }
 }
 </script>
 

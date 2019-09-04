@@ -1,7 +1,7 @@
 <template>
     <div class="clear">
         <link-nav></link-nav>
-        <xia-zai></xia-zai>
+        <xia-zai text="每天看点好内容"></xia-zai>
         <div v-for="(v,i) in syarr" :key="i" class="box">
             <h2>{{v.title}}
                 <span>{{v.loc_name}}</span>
