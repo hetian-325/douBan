@@ -30,7 +30,7 @@ export default {
     .bigBox{
         height:2.22rem;
         margin:0.2rem 0.18rem;
-        border-bottom: 0.01rem solid #ccc;
+        border-bottom: 0.01rem solid #f3f3f3;
         display:flex;
     }
     .imgs{

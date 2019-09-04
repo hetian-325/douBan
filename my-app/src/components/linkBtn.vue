@@ -22,6 +22,7 @@ export default {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        padding:0 0.03rem;
     }
     .btnBox a{
         font-size:0.15rem;

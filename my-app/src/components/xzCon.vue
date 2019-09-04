@@ -48,7 +48,7 @@ export default {
     }
     li{
         padding:0.1rem 0;
-        border-bottom: 0.01rem solid #ccc;
+        border-bottom: 0.01rem solid #f3f3f3;
     }
     .top{
         padding-right:0.2rem;
