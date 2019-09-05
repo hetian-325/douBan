@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="bigBox">
+        <div class="bigBox" v-for="(v,i) in 6" :key="i">
             <a href="#"><img class="imgs" src="../../static/img/footer.png"></a>
             <div class="con">
                 <strong>豆瓣<span>写了日记</span></strong>
@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+        <div><a class="ahref" href="#">显示更多广播</a></div>
     </div>
 </template>
 
@@ -74,5 +75,13 @@ export default {
         color:#ccc;
         margin:0 0.2rem 0 0.05rem;
         vertical-align: middle;
+    }
+    .ahref{
+        display: block;
+        padding: 0.15rem 0;
+        font-size: 0.16rem;
+        line-height: 0.18rem;
+        text-align: center;
+        color: #42bd56;
     }
 </style>

@@ -17,12 +17,12 @@ export default {
     .btnBox{
         width:3.4rem;
         height:1.06rem;
-        margin:0.59rem auto 0;
+        margin:0 auto;
         display:flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        padding:0 0.03rem;
+        padding:0.08rem 0.04rem 0;
     }
     .btnBox a{
         font-size:0.15rem;

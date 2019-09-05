@@ -71,4 +71,12 @@ export default {
         font-size:0.16rem;
         letter-spacing: 0.02rem;
     }
+    .box:after{
+        content:"";
+        display:block;
+        clear:both;
+        height:0;
+        overflow: hidden;
+        visibility: hidden;
+    }
 </style>

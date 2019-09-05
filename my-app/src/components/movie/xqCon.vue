@@ -33,17 +33,22 @@
         </div>
         <div class="conA">
             <span>查看更多相关分类</span>
-            <ul>
+            <ul class="ulBox">
                 <li>{{conarr[0].genres[0]}}</li>
                 <li>{{conarr[0].genres[1]}}</li>
                 <li>{{conarr[0].genres[2]}}</li>
             </ul>
         </div>
-        <div><span>{{conarr[0].title}}的图片</span></div>
         <div class="conB">
-            <img :src="conarr[0].images.small">
-            <img :src="conarr[0].images.small">
-            <img :src="conarr[0].images.small">
+            <span>{{conarr[0].title}}的图片</span>
+            <div class="lunBo">
+                <img :src="conarr[0].images.small">
+                <img :src="conarr[0].images.small">
+                <img :src="conarr[0].images.small">
+            </div>
+        </div>
+        <div class="conB">
+            <span>{{conarr[0].title}}的短评</span>
         </div>
     </div>
 </template>
@@ -120,11 +125,16 @@ export default {
         float:left;
         margin-right:0.1rem;
     }
-    .conB{
-        display:flex;
+    .ulBox{
+        overflow: hidden;
     }
     .conB{
-        clear: both;
+        padding:0.1rem 0 0.1rem 0.2rem;
+    }
+    .lunBo{
+        margin-top:0.2rem;
+        display:flex;
+        overflow:auto;
     }
     .conB span{
         color:#ccc;
@@ -132,5 +142,6 @@ export default {
     .conB img{
         width:1.6rem;
         height:1rem;
+        margin:0.05rem;
     }
 </style>

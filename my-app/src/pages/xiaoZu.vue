@@ -33,7 +33,7 @@ export default {
             method:"get",
             url:"/xiaoZu"
         }).then((ok)=>{
-            console.log(ok)
+            // console.log(ok)
             this.arra = ok.data.xiaozua;
             this.arrb = ok.data.xiaozub;
             this.arrc = ok.data.xiaozuc;

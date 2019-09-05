@@ -1,8 +1,8 @@
 <template>
-    <div class="box" @click="fun()">
-        <div class="left">
+    <div class="box">
+        <div class="left" @click="fun()">
             <img src="../../static/img/user.jpg">
-            <span>请先登录</span>
+            <span>{{text}}</span>
         </div>
         <div class="right">
             <img src="../../static/img/bi.jpg">
@@ -16,6 +16,26 @@ export default {
     methods:{
         fun(){
             this.$router.push('/denglu');
+        }
+    },
+    data(){
+        return {
+            text:'请先登录'
+        }
+    },
+    created(){
+        let token = localStorage.getItem("token");
+        if(token){
+            this.axios({
+                method:"get",
+                url:"http://localhost:3000/douban",
+                params:{token}
+            }).then((ok)=>{
+                // console.log(ok)
+                if(ok.data.linkid==5){
+                    this.text=ok.data.uname
+                }
+            })
         }
     }
 }

@@ -4,14 +4,6 @@
         <xia-zai text="打开APP，浏览更多"></xia-zai>
         <user-bar></user-bar>
         <liu-ye></liu-ye>
-        <liu-ye></liu-ye>
-        <liu-ye></liu-ye>
-        <liu-ye></liu-ye>
-        <liu-ye></liu-ye>
-        <liu-ye></liu-ye>
-        <div class="btm">
-            <a href="#">显示更多广播</a>
-        </div>
         <my-footer></my-footer>
     </div>
 </template>
@@ -34,12 +26,5 @@ export default {
 </script>
 
 <style scoped>
-    .btm a{
-        display: block;
-        padding: 0.15rem 0;
-        font-size: 0.16rem;
-        line-height: 0.18rem;
-        text-align: center;
-        color: #42bd56;
-    }
+
 </style>

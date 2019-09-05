@@ -15,6 +15,15 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 require('./mock')
 
 Vue.config.productionTip = false
+// 路由守卫
+// router.beforeEach((to, from, next) => {
+//   if(to.path=='/douban' || to.path=='/dianying' || to.path=='/tushu'){
+//       alert("您访问的页面必须登录后才能访问");
+//       next('/denglu');
+//   }else{
+//       next()
+//   }
+// })
 
 /* eslint-disable no-new */
 new Vue({
