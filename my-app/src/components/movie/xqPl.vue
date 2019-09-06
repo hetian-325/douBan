@@ -56,7 +56,7 @@ export default {
                 }).then((ok)=>{
                     // console.log(ok)
                     if(ok.data.linkid==5){
-                        var str=ok.data.uname
+                        var str=ok.data.uname;
                         this.obj.unshift({name:str,time:pattern,content:this.text});
                         this.text=''
                     }

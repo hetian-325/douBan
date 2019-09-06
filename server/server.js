@@ -9,7 +9,8 @@ var jwt = require("jsonwebtoken");
 var dbCollection = mongoose.model("servers",{
     uname:String,
     pwd:String,
-    email:String
+    email:String,
+    imgs:String
 })
 
 app.use(function(req,res,next){
@@ -39,12 +40,45 @@ app.get("/zhuce",function(req,res){
                     let useDom = new dbCollection({
                         uname,
                         pwd:newPwd,
-                        email
+                        email,
+                        imgs:'user.jpg'
                     })
                     useDom.save().then(
                         (ok)=>{
                             res.send({mes:"注册成功",status:200,linkid:0})
                     })
+                }
+            })
+        }
+    })
+})
+
+app.get("/txiang",function(req,res){
+    let imgs = req.query.imgs;
+    let uname = req.query.uname;
+    // console.log(imgs+"----"+uname)
+    mongoose.connect("mongodb://localhost:27017/three",{useNewUrlParser:true},function(err){
+        if(err){
+            console.log(err)
+        }else{
+            // dbCollection.update({uname},{$set:{imgs}}) 错误写法
+            dbCollection.updateOne({"uname":uname},{$set:{"imgs":imgs}}).then((ok)=>{
+                //这个必须写
+            })
+        }
+    })
+})
+
+app.get("/show",function(req,res){
+    let uname = req.query.uname;
+    // console.log(uname)
+    mongoose.connect("mongodb://localhost:27017/three",{useNewUrlParser:true},function(err){
+        if(err){
+            console.log(err)
+        }else{
+            dbCollection.find({uname}).then((ok)=>{
+                if(ok.length>0){
+                    res.send({imgs:ok[0].imgs})
                 }
             })
         }
@@ -64,6 +98,7 @@ app.post("/denglu",uE,function(req,res){
             dbCollection.find({email,pwd:newPwd}).then(
                 (ok)=>{
                     if(ok.length>0){
+                        // console.log(ok)
                         let obj = {
                             loginOk:true,
                             uname:ok[0].uname
