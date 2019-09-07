@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div>
-            <input type="text" v-model="text">
-            <button @click="fun()">评论</button>
+        <div class="plBox">
+            <textarea v-model="text" class="ipts"></textarea>
+            <button id="btns" @click="fun()" type="button" class="btn btn-success">发表</button>
         </div>
         <div class="bigBox" v-for="(v,i) in obj" :key="i">
             <a href="#" class="tou"><img class="imgs" src="../../../static/img/footer.png"></a>
@@ -47,27 +47,44 @@ export default {
 
             let pattern=`${year}-${month}-${day} ${hh}:${mm}:${ss}`
 
-            let token = localStorage.getItem("token");
-            if(token){
-                this.axios({
-                    method:"get",
-                    url:"http://localhost:3000/douban",
-                    params:{token}
-                }).then((ok)=>{
-                    // console.log(ok)
-                    if(ok.data.linkid==5){
-                        var str=ok.data.uname;
-                        this.obj.unshift({name:str,time:pattern,content:this.text});
+            // let token = localStorage.getItem("token");
+            // if(token){
+            //     this.axios({
+            //         method:"get",
+            //         url:"http://localhost:3000/douban",
+            //         params:{token}
+            //     }).then((ok)=>{
+            //         // console.log(ok)
+            //         if(ok.data.linkid==5){
+            //             var str=ok.data.uname;
+                        this.obj.unshift({name:"str",time:pattern,content:this.text});
                         this.text=''
-                    }
-                })
-            }
+            //         }
+            //     })
+            // }
         }
     }
 }
 </script>
 
 <style scoped>
+    #btns{
+        float:right;
+        margin-top:0.22rem;
+    }
+    .plBox{
+        width:100%;
+        padding:0.2rem;
+    }
+    .ipts{
+        resize: none;
+        width:80%;
+        height:0.8rem;
+        border:none;
+        border:0.01rem solid #ccc;
+        border-radius:0.06rem;
+        outline:none;
+    }
     .tou{
         height:0.4rem;
     }
@@ -96,6 +113,9 @@ export default {
     .btm p{
         font-size: 0.14rem;
         color:#333;
+    }
+    .footer{
+        width:2.9rem;
     }
     .footer img:last-child{
         float:right;

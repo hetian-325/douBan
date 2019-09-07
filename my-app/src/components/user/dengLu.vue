@@ -7,7 +7,7 @@
         <div class="iptBox">
             <input v-model="iptc" type="text" placeholder="邮箱">
             <input v-model="iptb" class="bor" :type="bool?'text':'password'" placeholder="密码"> 
-            <img :src="bool?'../../../static/img/yj2.png':'../../../static/img/yj.png'" @click="fun()">
+            <img :src="bool?'static/img/yj2.png':'static/img/yj.png'" @click="fun()">
             <button @click="denglu()" :style="bgcolor?'background-color:#eee;color:#333;':''">{{text}}</button>
         </div>
         <p>使用其他方式登录 & 找回密码</p>
@@ -37,19 +37,19 @@ export default {
             this.bgcolor = true;
             this.text = '正在登录...';
 
-            var param = new URLSearchParams();
-            param.append("email",this.iptc);
-            param.append("pwd",this.iptb);
+            // var param = new URLSearchParams();
+            // param.append("email",this.iptc);
+            // param.append("pwd",this.iptb);
 
-            this.axios({
-                method:"post",
-                url:"http://localhost:3000/denglu",
-                data:param
-            }).then((ok)=>{
-                    console.log(ok.data)
-                    if(ok.data.linkid==2){
+            // this.axios({
+            //     method:"post",
+            //     url:"http://localhost:3000/denglu",
+            //     data:param
+            // }).then((ok)=>{
+            //         console.log(ok.data)
+            //         if(ok.data.linkid==2){
 
-                        localStorage.setItem("token",ok.data.token);
+            //             localStorage.setItem("token",ok.data.token);
 
                         var i=4;
                         setInterval(()=>{
@@ -59,11 +59,11 @@ export default {
                             }
                             this.text=`登录成功 ${i} 秒后自动跳转`
                         },1000)
-                    }else{
-                        this.text="登录失败，请重新登录"
-                    }
-                }
-            )
+            //         }else{
+            //             this.text="登录失败，请重新登录"
+            //         }
+            //     }
+            // )
         },
         quxiao(){
             this.$router.go(-1);

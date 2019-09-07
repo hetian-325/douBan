@@ -34,9 +34,7 @@
         <div class="conA">
             <span>查看更多相关分类</span>
             <ul class="ulBox">
-                <li>{{conarr[0].genres[0]}}</li>
-                <li>{{conarr[0].genres[1]}}</li>
-                <li>{{conarr[0].genres[2]}}</li>
+                <li v-for="(v,i) in jqarr" :key="i">{{v}}</li>
             </ul>
         </div>
         <div class="conB">
@@ -56,6 +54,11 @@
 <script>
 import star from '../star'
 export default {
+    data() {
+        return {
+            jqarr:[]
+        }
+    },
     components:{
         star
     },
@@ -64,6 +67,9 @@ export default {
             type:Array,
             required:true
         }
+    },
+    created() {
+        this.jqarr=this.conarr[0].genres
     }
 }
 </script>

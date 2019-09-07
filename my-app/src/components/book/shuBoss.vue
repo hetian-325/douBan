@@ -1,28 +1,52 @@
 <template>
     <div class="box">
-        <div><img :src="shuarr[0].image"></div>
-        <div>
+        <div><img :src="shuarr[num].image"></div>
+        <div class="shuBox">
             <h3>
-                <span>{{shuarr[0].title}}</span>
-                <span>{{shuarr[0].price}}</span>
+                <span>{{shuarr[num].title}}</span>
+                <span>{{shuarr[num].price}}</span>
             </h3>
-            <p>{{shuarr[0].publisher}}</p>
+            <p>{{shuarr[num].publisher}}</p>
+            <button @click="fun()" id="btn" type="button" class="btn btn-info">下一本</button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            num:0
+        }
+    },
     props:{
         shuarr:{
             type:Array,
             required:true
+        }
+    },
+    methods:{
+        fun(){
+            this.num++
+            if(this.num>12){
+                this.num=0
+            }
         }
     }
 }
 </script>
 
 <style scoped>
+    .shuBox{
+        position:relative;
+        width:2.23rem;
+    }
+    #btn{
+        position:absolute;
+        right:0;
+        bottom:0;
+        outline: none;
+    }
     .box{
         width:100%;
         display:flex;

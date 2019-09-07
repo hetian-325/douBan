@@ -40,39 +40,39 @@ export default {
             let uname = this.text;
             // console.log(imgs)
             // console.log(uname)
-            this.axios({
-                method:"get",
-                url:"http://localhost:3000/txiang",
-                params:{imgs,uname}
-            })
+            // this.axios({
+            //     method:"get",
+            //     url:"http://localhost:3000/txiang",
+            //     params:{imgs,uname}
+            // })
         },
         fun(){
             this.$router.push('/denglu');
         }
     },
     created(){
-        let token = localStorage.getItem("token");
-        if(token){
-            this.axios({
-                method:"get",
-                url:"http://localhost:3000/douban",
-                params:{token}
-            }).then((ok)=>{
-                // console.log(ok)
-                if(ok.data.linkid==5){
-                    this.text=ok.data.uname;
-                    let uname =ok.data.uname;
-                    this.axios({
-                        method:"get",
-                        url:"http://localhost:3000/show",
-                        params:{uname}
-                    }).then((ok)=>{
-                        // console.log(ok)
-                        this.imgs=`../../static/image/${ok.data.imgs}`;
-                    })
-                }
-            })
-        }
+        // let token = localStorage.getItem("token");
+        // if(token){
+        //     this.axios({
+        //         method:"get",
+        //         url:"http://localhost:3000/douban",
+        //         params:{token}
+        //     }).then((ok)=>{
+        //         // console.log(ok)
+        //         if(ok.data.linkid==5){
+        //             this.text=ok.data.uname;
+        //             let uname =ok.data.uname;
+        //             this.axios({
+        //                 method:"get",
+        //                 url:"http://localhost:3000/show",
+        //                 params:{uname}
+        //             }).then((ok)=>{
+        //                 // console.log(ok)
+        //                 this.imgs=`../../static/image/${ok.data.imgs}`;
+        //             })
+        //         }
+        //     })
+        // }
     }
 }
 </script>
