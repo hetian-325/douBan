@@ -6,7 +6,7 @@
             <input v-model="iptb" class="bor" :type="bool?'text':'password'" placeholder="密码"> 
             <input v-model="ipta" class="bor" type="text" placeholder="用户名">
             <img :src="bool?'static/img/yj2.png':'static/img/yj.png'" @click="fun()">
-            <button @click="zhuce()" :style="bgcolor?'background-color:#eee;color:#333;':''">{{text}}</button>
+            <button @click="zhuce()" :style="bgcolor?'background-color:#eee;color:#333;':''" v-html="text"></button>
         </div>
         <p>点击「注册」代表你已阅读并同意用户使用协议</p>
         <a href="#">下载豆瓣App</a>
@@ -31,7 +31,7 @@ export default {
         },
         zhuce(){
             this.bgcolor = true;
-            this.text = '正在提交...';
+            this.text = `<img style="width:0.3rem;" src="static/img/loading.gif" />`;
             // this.axios({
             //     method:"get",
             //     url:"http://localhost:3000/zhuce",
@@ -39,13 +39,12 @@ export default {
             // }).then((ok)=>{
             //         // console.log(ok.data.linkid)
             //         if(ok.data.linkid==0){
-                        var i=4;
+                        var i=3;
                         setInterval(()=>{
                             i--;
                             if(i==0){
                                 this.$router.push("/denglu");
                             }
-                            this.text=`注册成功 ${i} 秒后自动跳转`
                         },1000)
             //         }else if(ok.data.linkid==1){
             //             this.text="不好意思，该用户名已注册"

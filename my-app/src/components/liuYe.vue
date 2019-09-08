@@ -1,13 +1,13 @@
 <template>
     <div>
-        <div class="bigBox" v-for="(v,i) in 6" :key="i">
+        <div class="bigBox" v-for="(v,i) in ziarr" :key="i">
             <a href="#"><img class="imgs" src="../../static/img/footer.png"></a>
             <div class="con">
-                <strong>豆瓣<span>写了日记</span></strong>
-                <p class="time">2017-03-01 19:30:41</p>
+                <strong>{{v.name}}<span>写了日记</span></strong>
+                <p class="time">{{v.time}}</p>
                 <div class="btm">
                     <h3>豆瓣App 4.12.0 主要更新</h3>
-                    <p>- 可以写读书笔记了，同时支持编辑。随时随地，摘录怦然心动的段落，写下阅读时的随感。来写笔记吧，你...</p>
+                    <p>{{v.content}}</p>
                 </div>
                 <div class="footer">
                         <img src="../../static/img/01.jpg"><i>6</i>
@@ -23,7 +23,12 @@
 
 <script>
 export default {
-    
+    props:{
+        ziarr:{
+            type:Array,
+            required:true
+        }
+    }
 }
 </script>
 
@@ -53,6 +58,8 @@ export default {
         color:#aaa;
     }
     .btm{
+        width:2.9rem;
+        height:1rem;
         margin:0.1rem 0 0.2rem;
         padding:0.15rem;
         border-radius: 0.02rem;

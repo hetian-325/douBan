@@ -8,7 +8,7 @@
             <input v-model="iptc" type="text" placeholder="邮箱">
             <input v-model="iptb" class="bor" :type="bool?'text':'password'" placeholder="密码"> 
             <img :src="bool?'static/img/yj2.png':'static/img/yj.png'" @click="fun()">
-            <button @click="denglu()" :style="bgcolor?'background-color:#eee;color:#333;':''">{{text}}</button>
+            <button @click="denglu()" :style="bgcolor?'background-color:#eee;color:#333;':''" v-html="text"></button>
         </div>
         <p>使用其他方式登录 & 找回密码</p>
         <div class="footer">
@@ -35,7 +35,7 @@ export default {
         },
         denglu(){
             this.bgcolor = true;
-            this.text = '正在登录...';
+            this.text = `<img style="width:0.3rem;" src="static/img/loading.gif" />`;
 
             // var param = new URLSearchParams();
             // param.append("email",this.iptc);
@@ -51,13 +51,12 @@ export default {
 
             //             localStorage.setItem("token",ok.data.token);
 
-                        var i=4;
+                        var i=3;
                         setInterval(()=>{
                             i--;
                             if(i==0){
                                 this.$router.push("/douban");
                             }
-                            this.text=`登录成功 ${i} 秒后自动跳转`
                         },1000)
             //         }else{
             //             this.text="登录失败，请重新登录"

@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="box">
         <div class="left">
             <div @click="tX()" class="touBox">
@@ -8,10 +9,15 @@
             <span @click="fun()">{{text}}</span>
         </div>
         <div class="right">
-            <img src="../../static/img/bi.jpg">
+            <img src="../../static/img/bi.jpg" @click="shuru()">
             <img src="../../static/img/xj.jpg">
         </div>
     </div>
+    <div class="plBox" v-if="bool">
+        <textarea v-model="ipts" class="ipts" @focus="ipts=''"></textarea>
+        <button id="btns" @click="fabiao()" type="button" class="btn btn-success">发表</button>
+    </div>
+</div>
 </template>
 
 <script>
@@ -19,7 +25,10 @@ export default {
     data(){
         return {
             text:'请先登录',
-            imgs:"../../static/img/user.jpg"
+            imgs:"../../static/img/user.jpg",
+            bool:false,
+            ipts:'记录你的生活...',
+            ziobj:[]
         }
     },
     methods:{
@@ -48,6 +57,24 @@ export default {
         },
         fun(){
             this.$router.push('/denglu');
+        },
+        shuru(){
+            this.bool = !this.bool;
+        },
+        fabiao(){
+            var dt = new Date();
+            var year = dt.getFullYear();
+            var month = (dt.getMonth() + 1).toString().padStart(2,'0');
+            var day = dt.getDate().toString().padStart(2,'0');
+            var hh = dt.getHours().toString().padStart(2,'0');
+            var mm = dt.getMinutes().toString().padStart(2,'0');
+            var ss = dt.getSeconds().toString().padStart(2,'0');
+            let pattern=`${year}-${month}-${day} ${hh}:${mm}:${ss}`
+
+            this.ziobj.push({name:"str",time:pattern,content:this.ipts});
+            this.ipts=''
+
+            this.$emit('zipao',this.ziobj);
         }
     },
     created(){
@@ -78,6 +105,23 @@ export default {
 </script>
 
 <style scoped>
+    #btns{
+        float:right;
+        margin-top:0.22rem;
+    }
+    .plBox{
+        width:100%;
+        padding:0.1rem 0.2rem;
+    }
+    .ipts{
+        resize: none;
+        width:80%;
+        height:0.8rem;
+        border:none;
+        border:0.01rem solid #ccc;
+        border-radius:0.06rem;
+        outline:none;
+    }
     .touBox{
         display:inline-block;
     }

@@ -17,10 +17,13 @@ import xQing from '../components/movie/xQing'
 import douCon from '../components/douCon'
 import syxQ from '../components/syxQ'
 
+import more from '../pages/more'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {path:'/more',name:'more',component:more},
     {path:'/doucon',name:'douCon',component:douCon},
     {path:'/syxq/:id',name:'syxQ',component:syxQ},
     {path:'/lunbo',name:'lunBo',component:lunBo},

@@ -1,8 +1,10 @@
 <template>
         <div class="header">
             <span @click="fun()">关闭</span>
+            <div @click="funb()">
             <input type="text" @focus="funa()" @blur="funa()">
             <img src="../../static/img/search.png" v-if="bool">
+            </div>
         </div>
 </template>
 
@@ -19,6 +21,9 @@ export default {
         },
         funa(){
             this.bool = !this.bool;
+        },
+        funb(){
+            this.$router.push('/more');
         }
     }
 }
